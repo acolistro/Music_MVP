@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements IMusicListContrac
         setContentView(R.layout.activity_main);
 
         musicListImplPresenter = new MusicListImplPresenter(this);
+        musicListImplPresenter.start();
         musicListImplPresenter.callMusicListAPI();
     }
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements IMusicListContrac
 
     @Override
     public void displayDataInRecyclerview(List<Track> results) {
-
+        Log.i("Music Response", results.get(0).getArtistName());
     }
 
     @Override

@@ -58,7 +58,7 @@ public class MusicListImplPresenter implements IMusicListContract.IMusicListPres
 
     @Override
     public void start() {
-
+        iMusicListView.setPresenter(this);
     }
 }
 
