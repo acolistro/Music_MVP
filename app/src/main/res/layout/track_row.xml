@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="394dp"
@@ -19,40 +19,47 @@
         app:layout_constraintVertical_bias="0.025" >
 
         <RelativeLayout
-            android:padding="14dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="160dp"
+            android:background="@color/colorPrimaryDark"
+            android:padding="14dp">
 
             <ImageView
                 android:id="@+id/albumArt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="99dp"
+                android:layout_height="88dp" />
 
             <TextView
+                android:id="@+id/artistName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/artistName"
+                android:layout_toEndOf="@id/albumArt"
+                android:padding="4dp"
                 android:text="@string/name_goes_here"
-                android:textSize="15sp"
-                android:layout_toEndOf="@id/albumArt"/>
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/trackName"
-                android:layout_below="@+id/artistName"
-                android:textSize="17sp"
-                android:text="@string/track_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/albumArt"/>
+                android:layout_below="@+id/artistName"
+                android:layout_toEndOf="@id/albumArt"
+                android:padding="4dp"
+                android:text="@string/track_name"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/albumName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/albumName"
-                android:text="@string/album_name"
-                android:textSize="15sp"
                 android:layout_below="@id/trackName"
-                android:layout_toEndOf="@id/albumArt"/>
+                android:layout_toEndOf="@id/albumArt"
+                android:padding="4dp"
+                android:text="@string/album_name"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

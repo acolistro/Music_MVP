@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.music_mvp.R;
 import com.example.music_mvp.model.Track;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -35,10 +37,22 @@ public class RecyclerViewMusicAdapter extends RecyclerView.Adapter<RecyclerViewM
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Track track = trackList.get(position); //ech track inside of the list
+        Track track = trackList.get(position); //each track inside of the list
         holder.artistName.setText(track.getArtistName());
         holder.trackName.setText(track.getTrackName());
         holder.albumName.setText(track.getCollectionName());
+        holder.albumArt.setImageURI(track.getArtworkUrl100());
+
+        Picasso.get()
+                .load(track.getArtworkUrl100())
+                .resize(50, 50)
+                .centerCrop()
+                .into(holder.albumArt);
+//        holder.overflow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//            }
+//        });
 
     }
 
@@ -52,13 +66,15 @@ public class RecyclerViewMusicAdapter extends RecyclerView.Adapter<RecyclerViewM
         public TextView artistName;
         public TextView trackName;
         public TextView albumName;
+        public ImageView albumArt;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            artistName.findViewById(R.id.artistName);
-            trackName.findViewById(R.id.trackName);
-            albumName.findViewById(R.id.albumName);
+            artistName = itemView.findViewById(R.id.artistName);
+            trackName = itemView.findViewById(R.id.trackName);
+            albumName = itemView.findViewById(R.id.albumName);
+            albumArt = itemView.findViewById(R.id.albumArt);
 
         }
     }

@@ -1,5 +1,7 @@
 package com.example.music_mvp.model;
 
+import android.net.Uri;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -241,8 +243,8 @@ public class Track {
         this.previewUrl = previewUrl;
     }
 
-    public String getArtworkUrl30() {
-        return artworkUrl30;
+    public Uri getArtworkUrl30() {
+        return Uri.parse(artworkUrl30);
     }
 
     public void setArtworkUrl30(String artworkUrl30) {
@@ -257,8 +259,8 @@ public class Track {
         this.artworkUrl60 = artworkUrl60;
     }
 
-    public String getArtworkUrl100() {
-        return artworkUrl100;
+    public Uri getArtworkUrl100() {
+        return Uri.parse(artworkUrl100);
     }
 
     public void setArtworkUrl100(String artworkUrl100) {
