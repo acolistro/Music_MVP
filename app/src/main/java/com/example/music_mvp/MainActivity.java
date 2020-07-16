@@ -12,9 +12,12 @@ import com.example.music_mvp.presenters.MusicListImplPresenter;
 
 import java.util.List;
 
+import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
+
 public class MainActivity extends AppCompatActivity implements IMusicListContract.IMusicListView {
 
     MusicListImplPresenter musicListImplPresenter;
+    IMusicListContract.IMusicListPresenter iMusicListPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,6 @@ public class MainActivity extends AppCompatActivity implements IMusicListContrac
 
     @Override
     public void setPresenter(IMusicListContract.IMusicListPresenter presenter) {
-
+        iMusicListPresenter = checkNotNull(presenter);
     }
 }
