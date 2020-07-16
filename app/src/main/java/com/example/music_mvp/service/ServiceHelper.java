@@ -1,5 +1,7 @@
 package com.example.music_mvp.service;
 
+import com.example.music_mvp.model.Constants;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -8,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceHelper {
 
-    public static final String URL = "https://itunes.apple.com/search?term=classick&amp;media=music&amp;entity=song&amp;limit=25";
+//    public static final String URL = "https://itunes.apple.com/search?term=classick&amp;media=music&amp;entity=song&amp;limit=25";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
@@ -17,7 +19,7 @@ public class ServiceHelper {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(Constants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(client)
