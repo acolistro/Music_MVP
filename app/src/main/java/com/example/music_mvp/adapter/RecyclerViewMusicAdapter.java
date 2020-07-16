@@ -35,12 +35,16 @@ public class RecyclerViewMusicAdapter extends RecyclerView.Adapter<RecyclerViewM
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Track track = trackList.get(position); //ech track inside of the list
+        holder.artistName.setText(track.getArtistName());
+        holder.trackName.setText(track.getTrackName());
+        holder.albumName.setText(track.getCollectionName());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return trackList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -51,6 +55,11 @@ public class RecyclerViewMusicAdapter extends RecyclerView.Adapter<RecyclerViewM
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            artistName.findViewById(R.id.artistName);
+            trackName.findViewById(R.id.trackName);
+            albumName.findViewById(R.id.albumName);
+
         }
     }
 }
