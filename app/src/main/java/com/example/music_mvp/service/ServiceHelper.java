@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceHelper {
 
-    public static final String BASE_URL = "https://itunes.apple.com/search";
+    public static final String URL = "https://itunes.apple.com/search?term=classick&amp;media=music&amp;entity=song&amp;limit=25";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
@@ -17,7 +17,7 @@ public class ServiceHelper {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(client)
