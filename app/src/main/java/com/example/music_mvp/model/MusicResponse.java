@@ -11,7 +11,7 @@ public class MusicResponse {
     private Integer resultCount;
     @SerializedName("results")
     @Expose
-    private List<Result> results = null;
+    private List<Track> results = null;
 
     public Integer getResultCount() {
         return resultCount;
@@ -21,11 +21,11 @@ public class MusicResponse {
         this.resultCount = resultCount;
     }
 
-    public List<Result> getResults() {
+    public List<Track> getResults() {
         return results;
     }
 
-    public void setResults(List<Result> results) {
+    public void setResults(List<Track> results) {
         this.results = results;
     }
 

@@ -10,5 +10,5 @@ import retrofit2.http.GET;
 
 public interface IApiHelper {
     @GET(Constants.RELATIVE_URL)
-    Observable<List<MusicResponse>> getMusic();
+    Observable<MusicResponse> getMusic();
 }
