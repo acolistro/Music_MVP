@@ -21,7 +21,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:background="#700E2F"
+            android:background="#23015A"
             android:padding="14dp">
 
             <ImageView
@@ -34,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/albumArt"
+                android:fontFamily="cursive"
                 android:padding="4dp"
                 android:text="@string/name_goes_here"
                 android:textColor="#ABECE6"
@@ -45,9 +46,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/artistName"
                 android:layout_toEndOf="@id/albumArt"
+                android:fontFamily="monospace"
                 android:padding="4dp"
                 android:text="@string/track_name"
-                android:textColor="#DD6A91"
+                android:textColor="#58C5F6"
                 android:textSize="15sp" />
 
             <TextView
@@ -56,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/trackName"
                 android:layout_toEndOf="@id/albumArt"
+                android:fontFamily="casual"
                 android:padding="4dp"
                 android:text="@string/album_name"
                 android:textColor="#7EDAD1"
